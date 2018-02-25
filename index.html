@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0% !important;
+            margin: 0%;
+        }
+    img{
+        height: 100vh;
+        width: 100%;
+    }
+   .container{
+       position: relative;
+   }
+   p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: monospace;
+    color: white;
+    font-size: 34px;
+    border-left:3px solid white;
+    border-right:3px solid white;
+    transition: 0.7s all;
+    padding: 0 1% 0 1%;
+    
+   }
+   p:hover{
+    border-left:6px solid red;
+    border-right:6px solid red;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: tomato;
+       
+   }
+    </style>
+
+<script>
+    
+    
+        var i=0;//intial vlaue 
+        var images=[]; 
+        var time=2000;
+        images[0]='1.jpg';
+        images[1]='2.jpg';
+        images[2]='3.jpeg';
+        images[3]='4.jpeg';
+        function changeImage(){
+            document.slide.src =images[i];
+            if(i<images.length -1){
+                i++;
+            }else{
+                i=0;
+            }
+            setTimeout("changeImage()",time);
+        }
+        window.onload =changeImage;
+        
+        
+    </script>
+    
+    
+    
+</head>
+<body><div class="container">
+    <p>IMAGE SLIDER</p>
+        <img name="slide" width="400px" height="500px">
+    
+    </div>
+    
+</body>
+</html>
